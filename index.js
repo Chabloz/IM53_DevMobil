@@ -1,6 +1,5 @@
 import Circle from "./class/Circle.js";
-
-console.log('42');
+import Vector2 from "./class/Vector2.js";
 
 const TAU = 2 * Math.PI;
 
@@ -12,7 +11,9 @@ ctx.canvas.height = ctx.canvas.clientHeight;
 
 let lastTime = 0;
 
-const c1 = new Circle();
+const c1 = new Circle({
+  velocity: Vector2.fromAngle(TAU/8, 0.2)
+});
 
 
 function tickRendering(t) {

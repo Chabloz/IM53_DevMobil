@@ -4,19 +4,21 @@ const TAU = Math.PI * 2;
 export default class Circle {
 
   constructor({
-    pos = new Vector2(),
+    pos = new Vector2({x: 0, y: 0}),
     radius = 100,
-    color = "hsl(180,50,100)",
+    color = "hsl(0, 90%, 47%)",
     velocity = new Vector2()
   } = {}) {
     this.pos = pos;
+    console.log(pos)
     this.color = color;
     this.velocity = velocity;
     this.radius = radius;
   }
 
-  update(deltaTime) {
-      this.pos.x += 1;
+  update(dt) {
+    // todo
+    this.radius += 1; // CHANGE THIS !
   }
 
   draw(ctx) {
