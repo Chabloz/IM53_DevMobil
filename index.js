@@ -9,28 +9,27 @@ const TAU = 2 * Math.PI;
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
-ctx.canvas.width = ctx.canvas.clientWidth;
-ctx.canvas.height = ctx.canvas.clientHeight;
-
-let lastTime = 0;
-
 const c1 = new Circle({
-  velocity: Vector2.fromAngle(TAU/8, 0.2)
+  position: new Vector2(),
+  radius: 100,
+  color: 'hsl(0, 95%, 50%)',
+  velocity: Vector2.fromAngle(TAU/8, 0.1)
 });
 
 
-function tickRendering(t) {
-  requestAnimationFrame(tickRendering);
-  const deltaTime = t - lastTime;
-  lastTime = t;
+function tickUpdate(dt) {
+  console.log(dt);
+  c1.update(dt);
+}
 
-  if (keyboard.isKeyDown('KeyW')) {
-    c1.update(deltaTime);
-  }
-
+function tickRender(t) {
   ctx.canvas.width = ctx.canvas.clientWidth;
   ctx.canvas.height = ctx.canvas.clientHeight;
   c1.draw(ctx);
 }
 
-requestAnimationFrame(tickRendering)
+MainLoop.setSimulationTimestep(1000/240);
+MainLoop
+  .setUpdate(tickUpdate)
+  .setDraw(tickRender)
+  .start();
