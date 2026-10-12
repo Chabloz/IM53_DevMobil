@@ -23,7 +23,6 @@ function tickRendering(t) {
   requestAnimationFrame(tickRendering);
   const deltaTime = t - lastTime;
   lastTime = t;
-  console.log(deltaTime);
 
   if (keyboard.isKeyDown('KeyW')) {
     c1.update(deltaTime);
