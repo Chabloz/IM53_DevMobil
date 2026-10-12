@@ -1,5 +1,8 @@
 import Circle from "./class/Circle.js";
 import Vector2 from "./class/Vector2.js";
+import Keyboard from "./class/Keyboard.js";
+
+const keyboard = new Keyboard();
 
 const TAU = 2 * Math.PI;
 
@@ -20,11 +23,14 @@ function tickRendering(t) {
   requestAnimationFrame(tickRendering);
   const deltaTime = t - lastTime;
   lastTime = t;
+  console.log(deltaTime);
+
+  if (keyboard.isKeyDown('KeyW')) {
+    c1.update(deltaTime);
+  }
 
   ctx.canvas.width = ctx.canvas.clientWidth;
   ctx.canvas.height = ctx.canvas.clientHeight;
-
-  c1.update(deltaTime);
   c1.draw(ctx);
 }
 
