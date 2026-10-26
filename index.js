@@ -7,14 +7,14 @@ import Tweens from "./class/Tweens.js";
 const keyboard = new Keyboard();
 const tweensManager = new Tweens();
 
-// tweensManager.create({dur: 2000, from: 0, to: 360, animate: val => {
-//   c1.position.x = val;
-// }});
-tweensManager.create({dur: 2000, from: 0, to: 360, animate: val => {
-  c1.color = `hsl(${val} 50 100)`;
-  console.log(c1.color);
+tweensManager.create({dur: 2000, yoyo: true, loop: true, from: 300, to: 600, animate: val => {
+  c1.position.x = val;
 }});
-tweensManager.create({ease: 'bounceOut', loop: true, yoyo: true,  dur: 500, from: 100, to: 300, animate: val => {
+tweensManager.create({dur: 10000, loop: true, from: 0, to: 360, animate: val => {
+  c1.color = `oklch(0.7 0.5 ${Math.round(val)})`;
+  c1.blurColor = c1.color;
+}});
+tweensManager.create({ease: 'bounceOut', yoyo: true, loop: true,  dur: 1000, from: 100, to: 300, animate: val => {
   c1.radius = val;
 }});
 
@@ -25,7 +25,7 @@ const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
 const c1 = new CircleInFlatTorus({
-  position: new Vector2(),
+  position: new Vector2({x: 300, y: 300}),
   radius: 100,
   color: 'hsl(0, 95%, 50%)',
   velocity: Vector2.fromAngle(TAU/8, 0)

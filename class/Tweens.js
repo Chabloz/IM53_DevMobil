@@ -8,7 +8,6 @@ const makeEaseInOut = (timing) => (t) => {
 const easingFct = new Map();
 
 easingFct.set('linear', (t) => t);
-
 easingFct.set('quad', (t) => t ** 2);
 easingFct.set('cubic', (t) => t ** 3);
 easingFct.set('circ', (t) => 1 - Math.sin(Math.acos(t)));
@@ -77,7 +76,7 @@ export default class Tweens {
 
       tween.animate(value);
 
-      if (true !== 1) continue;
+      if (t !== 1) continue;
 
       if (tween.loop || tween.yoyo) {
         if (tween.yoyo) [tween.from, tween.to] = [tween.to, tween.from];
