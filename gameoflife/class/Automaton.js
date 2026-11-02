@@ -1,4 +1,4 @@
-import Matrix2D from "./Matrix2D";
+import Matrix2D from "./Matrix2D.js";
 
 export default class Automaton {
 
@@ -9,4 +9,5 @@ export default class Automaton {
   getMatrix2D() {
     return this.matrix;
   }
+
 }
