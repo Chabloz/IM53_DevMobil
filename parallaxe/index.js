@@ -1,5 +1,5 @@
 import Circle from "./class/Circle.js";
-import Vector2 from "./class/Vector2.js";
+import Vector2D from "./class/Vector2D.js";
 import Keyboard from "./class/Keyboard.js";
 import CircleInFlatTorus from "./class/CircleInFlatTorus.js";
 import Tweens from "./class/Tweens.js";
@@ -25,10 +25,10 @@ const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
 const c1 = new CircleInFlatTorus({
-  position: new Vector2({x: 300, y: 300}),
+  position: new Vector2D({x: 300, y: 300}),
   radius: 100,
   color: 'hsl(0, 95%, 50%)',
-  velocity: Vector2.fromAngle(TAU/8, 0)
+  velocity: Vector2D.fromAngle(TAU/8, 0)
 });
 
 

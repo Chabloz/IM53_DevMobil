@@ -1,22 +1,22 @@
-export default class Vector2 {
+export default class Vector2D {
   constructor({ x = 0, y = 0 } = {}) {
     this.x = x;
     this.y = y;
   }
 
-  static isVector2(value) {
-    return value instanceof Vector2;
+  static isVector2D(value) {
+    return value instanceof Vector2D;
   }
 
   static fromAngle(angle = 0, length = 1) {
-    return new Vector2({
+    return new Vector2D({
       x: Math.cos(angle) * length,
       y: Math.sin(angle) * length,
     });
   }
 
   clone() {
-    return new Vector2({ x: this.x, y: this.y });
+    return new Vector2D({ x: this.x, y: this.y });
   }
 
   add(other) {
