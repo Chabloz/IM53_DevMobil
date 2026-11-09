@@ -8,7 +8,7 @@ wsServer.addRpc('getMeteo', (clientData) => {
   return {
     temperature: Math.round(Math.random() * 30),
     condition: 'Sunny',
-    location: clientData?.location || 'Unknown'
+    location: clientData?.location || 'Unknown',
   };
 });
 
