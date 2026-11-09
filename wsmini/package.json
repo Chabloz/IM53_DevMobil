@@ -1,0 +1,19 @@
+{
+  "name": "wsmini",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "server": "node server.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "wsmini": "^1.2.2"
+  },
+  "devDependencies": {
+    "vite": "^8.3.6"
+  }
+}
